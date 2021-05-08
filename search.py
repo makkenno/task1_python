@@ -6,6 +6,8 @@ def search():
         print("{}が見つかりました".format(input_name))
     else:
         print("{}は見つかりませんでした".format(input_name))
+        source.append(input_name)
+        print("{}を追加しました".format(input_name))
 
 if __name__ == "__main__":
     search()
