@@ -2,6 +2,7 @@ import csv
 
 with open('./source.csv', "r", encoding="utf-8") as f:
     source = csv.reader(f, delimiter="\n")
+    # 多次元リストの一次元化
     source_list = sum(list(source), [])
 
 
