@@ -1,6 +1,6 @@
 import csv
 
-with open('./source.csv', mode="r", encoding="utf-8") as f:
+with open('./source.csv', "r", encoding="utf-8") as f:
     source = csv.reader(f, delimiter="\n")
     source_list = sum(list(source), [])
 
@@ -11,7 +11,9 @@ def search():
         print("{}が見つかりました".format(input_name))
     else:
         print("{}は見つかりませんでした".format(input_name))
-        source.append(input_name)
+        with open('./source.csv', 'a', encoding='utf-8') as f:
+            source = csv.writer(f, lineterminator='\n')
+            source.writerow([input_name])
         print("{}を追加しました".format(input_name))
 
 if __name__ == "__main__":
